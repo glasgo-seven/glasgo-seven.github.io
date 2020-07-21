@@ -1,0 +1,27 @@
+
+* {
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+.content {
+    background-color:  rgb(235, 235, 235);
+}
+
+.box {
+    margin: 20% 35% 20% 35%;
+    padding: 0.5%;
+    border: 4px double burlywood;
+    background-color: azure;
+}
+
+.button {
+    margin-top: 10%;
+    padding: 1%;
+}
+
+a {
+    text-align: center;
+    padding: 1%;
+    text-decoration-line: none;
+}

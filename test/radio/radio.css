@@ -1,0 +1,82 @@
+
+html {
+    background-color: rgb(170, 170, 170);
+}
+
+table {
+    border: 1.5px solid dimgray;
+}
+
+tr, th, td {
+    margin: 1%;
+}
+
+.title {
+    margin: 2%;
+}
+
+.about {
+    margin: 1%;
+    padding: 0.5%;
+}
+
+.table {
+    margin: 1%;
+    padding: 0.5%;
+}
+
+.block {
+    overflow: hidden;
+    display: inline-block;
+    height: 400px;
+}
+
+.left {
+    background-color: rgb(60, 60, 60);
+    width: 20%;
+    color: white;
+}
+
+.left a {
+    color: white;
+    text-decoration: none;
+}
+
+.left a:hover {
+    text-decoration-line: underline;
+}
+
+.right a {
+    color: black;
+    text-decoration: underline;
+}
+
+.right a:hover {
+    color: blue;
+    text-decoration: none;
+}
+
+li {
+    margin: 5%;
+}
+
+.right {
+    background-color: rgb(250, 250, 250);
+    width: 80%;
+}
+
+.column {
+    float: left;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+    }
+}

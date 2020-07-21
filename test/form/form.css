@@ -1,0 +1,28 @@
+
+.content {
+    background-color: rgb(235, 235, 235);
+}
+
+.form {
+    margin: 15% 35% 15% 35%;
+    padding: 0.1%;
+    border: 4px double burlywood;
+    background-color: azure;
+}
+
+.data {
+    margin: 0.5%;
+    padding: 0.1%;
+    align-self: center;
+}
+
+.button {
+    margin-top: 10%;
+    margin-bottom: 5%;
+    padding: 0.1%;
+    align-self: center;
+}
+
+h2, p, form {
+    text-align: center;
+}

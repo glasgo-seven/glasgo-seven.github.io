@@ -1,0 +1,150 @@
+
+/* Classes */
+
+.header {
+    /*border: 4px double burlywood;*/
+    background-color: rgb(255, 235, 130);
+    text-align: center;
+    padding: 0.1%;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+}
+
+.topnav {
+    overflow: hidden;
+    background-color: #333;
+}
+  
+.topnav a {
+    float: left;
+    display: block;
+    color: rgb(240, 210, 50);
+    text-align: center;
+    padding-bottom: 0.75%;
+    padding-top: 0.75%;
+    text-decoration: none;
+}
+  
+.topnav a:hover {
+    background-color: rgb(240, 210, 50);
+    color: #333;
+}
+
+.column {
+    float: left;
+}
+
+.cTopnav {
+    width: 33.33%;
+}
+
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+    }
+}
+
+.middle {
+    overflow: hidden;
+}
+
+.HP {
+    height: auto;
+    min-height: 488px;
+}
+
+.cLeft {
+    width: 15%;
+
+    /*border: 4px double burlywood;*/
+    background-color: rgb(255, 230, 90);
+    padding: 0.1% 0.5%;
+}
+
+.cLeft li {
+    padding-bottom: 5%;
+    padding-top: 5%;
+}
+
+.cRight {
+    width: 80.5%;
+    /*overflow: scroll;*/
+
+    /*border: 4px double burlywood;*/
+    background-color: rgb(255, 235, 150);
+    padding: 0.1% 0.5%;
+}
+
+.languagenav {
+    overflow: hidden;
+
+    width: 2.3%;
+
+    /*border: 4px double burlywood;*/
+    background-color: #333;
+    padding: 0.1%;
+}
+
+.cLang {
+    width: 100%;
+
+    /*border: 4px double burlywood;*/
+    background-color: #333;
+    padding: 0.1% 0.5%;
+}
+
+.languagenav a {
+    float: left;
+    display: block;
+    color: rgb(240, 210, 50);
+    text-align: center;
+    text-decoration: none;
+    padding-bottom: 25%;
+    padding-top: 25%;
+}
+
+.languagenav a:hover {
+    background-color: rgb(240, 210, 50);
+    color: #333;
+}
+
+.signature {
+    text-align: center;
+    background-color: #333;
+    color: rgb(145, 130, 60);
+    padding: 0.1%;
+}
+
+.signature p {
+    padding-top: 0.1%;
+    padding-bottom: 0.1%;
+    margin: 0.1%;
+}
+
+/* --------------- */
+
+/* IDs */
+
+/* --------------- */
+
+/* Default */
+
+* {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+    background-color: rgb(100, 100, 100);
+}
+
+h1 {
+    size: 20%;
+}
+
+/* --------------- */
