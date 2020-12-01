@@ -28,7 +28,7 @@ tr, th, td {
 .block {
     overflow: hidden;
     display: inline-block;
-    height: 400px;
+    height: 600px;
 }
 
 .left {
@@ -79,4 +79,8 @@ li {
     .column {
         width: 100%;
     }
+}
+
+* {
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }

@@ -2,8 +2,9 @@
 /* Classes */
 
 .header {
-    /*border: 4px double burlywood;*/
-    background-color: rgb(255, 235, 130);
+	/*border: 4px double burlywood;*/
+	/*background: rgb(255, 235, 130) url(./long.jpg) round;*/
+	background-color: rgb(255, 235, 130);
     text-align: center;
     padding: 0.1%;
     padding-top: 0.5%;
@@ -27,7 +28,8 @@
   
 .topnav a:hover {
     background-color: rgb(240, 210, 50);
-    color: #333;
+	color: #333;
+	font-weight: bold;
 }
 
 .column {
@@ -111,7 +113,8 @@
 
 .languagenav a:hover {
     background-color: rgb(240, 210, 50);
-    color: #333;
+	color: #333;
+	font-weight: bold;
 }
 
 .signature {

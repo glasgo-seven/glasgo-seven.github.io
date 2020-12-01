@@ -1,7 +1,8 @@
 "use strict";
 
-function login(login, password) {
-	if (login != "admin" & password != "admin")
+function login() {
+	if (document.getElementById('login').value == "admin" && document.getElementById('password').value == "admin")
+		return (window.location.href = "../menu/menu.html");
+	else
 		alert("Wrong login or password!");
-	else return (true);
 }
