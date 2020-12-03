@@ -3,7 +3,6 @@ function capitalize(string) {
 }
 
 function CreateTableFromJSON() {
-	// var myBooks = log_table;
 
 	// EXTRACT VALUE FOR HTML HEADER. 
 	var col = [];
@@ -37,9 +36,11 @@ function CreateTableFromJSON() {
 				tabCell.innerHTML = j == col.length - 1 ? (log_table[i][col[j]] ? "!" : "") : log_table[i][col[j]];
 			} else {
 				var a = document.createElement("a");
-				a.setAttribute("href", log_table[i][col[0]]);
-				a.innerHTML = log_table[i][col[j]];
-				tabCell.innerHTML = a;
+				var linkText = document.createTextNode(log_table[i][col[j]]);
+				a.appendChild(linkText);
+				a.title = log_table[i][col[j]];
+				a.href = log_table[i][col[0]];
+				tabCell.appendChild(a);
 			}
 		}
 	}
