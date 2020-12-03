@@ -8,7 +8,7 @@
         <link href="radio.css" type="text/css" rel="stylesheet" />
     </head>
 
-    <body>
+    <body onload="CreateTableFromJSON()">
         <div class="content">
 
             <div class="body row">
@@ -52,7 +52,7 @@
                         <div class="about">
                             <h2>About:</h2>
                             <p>
-                                Greetings to you fellow radio enthusiasts! Welcome to my radio recordings archive.
+                                Greetings to all you fellow radio enthusiasts! Welcome to my radio recordings archive.<br />
                                 Interesting events, sounds and music that I find worth to be shared with the wide web.
                             </p>
                         </div>
@@ -64,26 +64,9 @@
                                 Logs:
                             </h2>
                             
-                            <table>
-                                <tr>
-                                    <th>
-                                        Date
-                                    </th>
-                                    <th>
-                                        Caption
-                                    </th>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        08.10.16
-                                    </td>
-                                    <td>
-                                        <a href="./audio/audio00.html">First encounter</a>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>
-                        
+                            <p id="showData"></p>
+						</div>
+
                     </div>
 
                 </div>
@@ -96,7 +79,10 @@
             </div>
 
         </div>
-    </body>
+	</body>
+
+<script type="text/javascript" src="log_table.js"></script>
+<script type="text/javascript" src="tableFromJSON.js"></script>
 
     <footer>
 

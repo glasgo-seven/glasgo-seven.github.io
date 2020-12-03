@@ -1,0 +1,7 @@
+=start recording=
+
+*static noise*
+
+*beeping*
+
+=stop recording=
