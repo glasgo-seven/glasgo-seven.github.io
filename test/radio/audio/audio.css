@@ -34,6 +34,14 @@ pre {
     border: 1px solid rgb(90, 90, 90);
 }
 
+.transcription_text {
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 0.5%;
+	border: 1px solid rgb(90, 90, 90);
+	font-family: monospace;
+}
+
 .button {
 	margin-top: 3.5%;
 }

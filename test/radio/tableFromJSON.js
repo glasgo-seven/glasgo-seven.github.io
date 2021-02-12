@@ -19,7 +19,7 @@ function CreateTableFromJSON() {
 
 	// CREATE HTML TABLE HEADER ROW USING THE EXTRACTED HEADERS ABOVE.
 	var tr = table.insertRow(-1);                   // TABLE ROW.
-	for (var i = 1; i < col.length; i++) {
+	for (var i = 0; i < col.length; i++) {
 		var th = document.createElement("th");      // TABLE HEADER.
 		th.setAttribute("align", "center");
 		th.innerHTML = capitalize(col[i]);
@@ -29,17 +29,19 @@ function CreateTableFromJSON() {
 	// ADD JSON DATA TO THE TABLE AS ROWS.
 	for (var i = 0; i < log_table.length; i++) {
 		tr = table.insertRow(-1);
-		for (var j = 1; j < col.length; j++) {
+		for (var j = 0; j < col.length; j++) {
 			var tabCell = tr.insertCell(-1);
-			if (j != 2) {
+			if (j != 1) {
 				tabCell.setAttribute("align", "center");
 				tabCell.innerHTML = j == col.length - 1 ? (log_table[i][col[j]] ? "!" : "") : log_table[i][col[j]];
 			} else {
 				var a = document.createElement("a");
 				var linkText = document.createTextNode(log_table[i][col[j]]);
 				a.appendChild(linkText);
-				a.title = log_table[i][col[j]];
-				a.href = log_table[i][col[0]];
+				// a.setAttribute("onclick", "return setAudioID(" + (i+1) + ")");
+				// a.setAttribute("id", "link_audio" + (i+1));
+				a.addEventListener("click", e => { setAudioID(i + 1); });
+				a.href = "./audio/audio.html";
 				tabCell.appendChild(a);
 			}
 		}
