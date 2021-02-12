@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" style="font-family: 'Courier New', Courier, monospace">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="../style.css" type="text/css" rel="stylesheet" />
+		<title>Задача 1. Письмо матери.</title>
+	</head>
+
+	<body>
+		<form action="../index.html" style="display: flex;">
+			<input type="submit" value="🡸" style="padding: auto; width: 32px; height: 32px;">
+			<h1 style="margin: 0 2%;">Задача 1. Письмо матери.</h1>
+		</form>
+		<hr>
+		
+		<fieldset id="task-text">
+<pre>
+Иван Анатольевич Терентьев пишет письмо своей матери в деревню.
+Получается, правда, не слишком душевно:
+</pre>
+	<fieldset id="task-code" style="min-height: auto; max-width: 600px;">
+<legend>Код:</legend>
+<pre style="font-family: 'Courier New', Courier, monospace"><b>print("Что с ебалом? Дед живой?")</b></pre>
+	</fieldset>
+<pre>
+Помогите Ивану Анатольевичу написать нормальное письмо домой.
+</pre>
+
+		</fieldset>
+
+		<fieldset id="task-input">
+			<legend>Входные данные:</legend>
+<pre>
+-
+</pre>
+
+		</fieldset>
+
+		<fieldset id="task-output">
+			<legend>Выходные данные:</legend>
+<pre>
+С лицом всё хорошо. Родился сын.
+</pre>
+		</fieldset>
+
+		<hr>
+		<fieldset>
+			<legend><button id="task-hint-1" style="height: 24px;" onclick="hintLoad(this)">Подсказка #1</button></legend>
+<pre hidden class="hint" id="task-hint-1-text">
+Требуется изменить выводимое сообщение.
+</pre>
+		</fieldset>
+		<fieldset>
+			<legend><button id="task-hint-2" style="height: 24px;" onclick="hintLoad(this)">Подсказка #2</button></legend>
+<pre hidden class="hint" id="task-hint-2-text">
+Строка, переданная функции, и строка на выводе должны совпадать.
+</pre>
+		</fieldset>
+		<fieldset>
+			<legend><button id="task-hint-3" style="height: 24px;" onclick="hintLoad(this)">ОТВЕТ</button></legend>
+<pre hidden class="hint" id="task-hint-3-text" style="font-family: 'Courier New', Courier, monospace">
+<b>print("С лицом всё хорошо. Родился сын.")</b>
+</pre>
+		</fieldset>
+	</body>
+
+	<script>
+		function hintLoad(el) {
+			document.getElementById(el.id + '-text').hidden = document.getElementById(el.id + '-text').hidden ? false : true;
+		}
+	</script>
+</html>

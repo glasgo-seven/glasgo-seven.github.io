@@ -1,0 +1,33 @@
+body {
+	font-size: 16px;
+	margin: 2%;
+}
+
+.box {
+	margin: 2% 1%;
+}
+
+fieldset {
+	margin: 2% 1%;
+	padding: auto;
+	max-width: 680px;
+}
+
+fieldset.table {
+	margin: 2% 1%;
+	padding: auto;
+	width: 340px;
+}
+
+hr {
+	max-width: 735px;
+	margin: 8px 0;
+}
+
+pre {
+	white-space: pre-wrap;
+}
+
+pre.hint {
+	margin: 4px 0;
+}
