@@ -4,7 +4,7 @@
 		<meta charset="UTF-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link href="style.css" type="text/css" rel="stylesheet" />
+		<link href="./style.css" type="text/css" rel="stylesheet" />
 		<link rel="icon" href="./favicon.ico">
 		<title>Сборник задач Python</title>
 	</head>
@@ -14,13 +14,13 @@
 		<div id="tables" style="display: flex;">
 			<div class="box" id="task-box">
 				<fieldset class="table">
-					<legend>Задачи: <b id="task-number">1</b></legend>
+					<legend>Задачи: <b id="task-number"></b></legend>
 					<table id="task-table"></table>
 				</fieldset>
 			</div>
 			<div class="box" id="project-box">
 				<fieldset class="table">
-					<legend>Проекты: <b id="project-number">1</b></legend>
+					<legend>Проекты: <b id="project-number"></b></legend>
 					<table id="project-table"></table>
 				</fieldset>
 			</div>
@@ -30,54 +30,34 @@
 
 	<script>
 		function onLoad() {
-			taskTableLoad();
-			projectTableLoad();
+			document.getElementById("task-number").innerHTML = taskDataBase_size;
+			taskTableLoad(taskDataBase_size, 0);
+
+			document.getElementById("project-number").innerHTML = projectDataBase_size;
+			taskTableLoad(projectDataBase_size, 1);
 		}
 
-		function taskTableLoad() {
+		function taskTableLoad(size, dataBase) {
 			let tableContent = "";
-			const size = parseInt(document.getElementById("task-number").innerHTML)
 			const rows = Math.floor(size / 5) + 1;
 			for (y = 0; y < rows; y++) {
 				tableContent += "<tr>";
 				for (x = 1; x <= 5; x++) {
 					const taskNumber = y * 5 + x
 					if (taskNumber <= size) {
-						tableContent += '<td><button style="width: 64px; height: 32px;" onclick="taskLoad(' + taskNumber + ')" value="' + taskNumber + '">' + taskNumber + '</button></td>';
+						tableContent += '<td><button style="width: 64px; height: 32px;" onclick="taskLoad(' + taskNumber + ', '+ dataBase + ')" value="' + taskNumber + '">' + taskNumber + '</button></td>';
 					} else {
 						tableContent += '<td></td>';
 					}
 				}
 				tableContent += "</tr>";
 			}
-			document.getElementById("task-table").innerHTML = tableContent;
+			document.getElementById((dataBase == 0 ? 'task' : 'project') + "-table").innerHTML = tableContent;
 		}
 
-		function taskLoad(taskNumber) {
-			document.location.href = './tasks/task' + taskNumber + '.html';
-		}
-
-		function projectTableLoad() {
-			let tableContent = "";
-			const size = parseInt(document.getElementById("project-number").innerHTML)
-			const rows = Math.floor(size / 5) + 1;
-			for (y = 0; y < rows; y++) {
-				tableContent += "<tr>";
-				for (x = 1; x <= 5; x++) {
-					const projectNumber = y * 5 + x
-					if (projectNumber <= size) {
-						tableContent += '<td><button style="width: 64px; height: 32px;" onclick="projectLoad(' + projectNumber + ')" value="' + projectNumber + '">' + projectNumber + '</button></td>';
-					} else {
-						tableContent += '<td></td>';
-					}
-				}
-				tableContent += "</tr>";
-			}
-			document.getElementById("project-table").innerHTML = tableContent;
-		}
-
-		function projectLoad(projectNumber) {
-			document.location.href = './projects/project' + projectNumber + '.html';
+		function taskLoad(taskNumber, dataBase) {
+			document.location.href = './task.html?' + dataBase + '=' + taskNumber;
 		}
 	</script>
+	<script src="data.js"></script>
 </html>

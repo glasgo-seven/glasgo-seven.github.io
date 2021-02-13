@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" style="font-family: 'Courier New', Courier, monospace">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="./style.css" type="text/css" rel="stylesheet" />
+		<link rel="icon" href="./favicon.ico">
+
+		<title id="title"></title>
+	</head>
+
+	<body onload="onLoad()">
+		<form action="./index.html" style="display: flex;">
+			<input type="submit" value="🡸" style="padding: auto; width: 32px; height: 32px;">
+			<h1 id="header" style="margin: 0 2%;"></h1>
+		</form>
+		<hr>
+		
+		<fieldset id="task-text">
+<pre id="task-text-pre"></pre>
+	<fieldset id="task-code" style="min-height: auto; max-width: 600px;">
+		<legend>Код:</legend>
+		<pre id="task-code-pre" style="font-family: 'Courier New', Courier, monospace"></pre>
+	</fieldset>
+<pre id="task-task-pre"></pre>
+
+		</fieldset>
+
+		<fieldset id="task-input">
+			<legend>Входные данные:</legend>
+			<pre id="task-input-pre"></pre>
+		</fieldset>
+
+		<fieldset id="task-output">
+			<legend>Выходные данные:</legend>
+			<pre id="task-output-pre"></pre>
+		</fieldset>
+
+		<hr>
+		<fieldset>
+			<legend><button id="task-hint1" style="height: 24px;" onclick="hintLoad(this)">Подсказка #1</button></legend>
+			<pre hidden class="hint" id="task-hint1-pre"></pre>
+		</fieldset>
+		<fieldset>
+			<legend><button id="task-hint2" style="height: 24px;" onclick="hintLoad(this)">Подсказка #2</button></legend>
+			<pre hidden class="hint" id="task-hint2-pre"></pre>
+		</fieldset>
+		<fieldset>
+			<legend><button id="task-ans" style="height: 24px;" onclick="hintLoad(this)">ОТВЕТ</button></legend>
+			<pre hidden class="hint" id="task-ans-pre" style="font-family: 'Courier New', Courier, monospace"></pre>
+		</fieldset>
+	</body>
+
+	<script>
+		function onLoad() {
+			const input = window.location.href.split('?')[1];
+			const dbID = parseInt(input.split('=')[0]) == 0 ? 'TASKS' : "PROJECTS";
+			const taskID = parseInt(input.split('=')[1]);
+			window.document.title = (dbID == 'TASKS' ? "Задание " : "Проект ") + taskID + " - " + taskDataBase[dbID][taskID].title;
+			document.getElementById("header").innerHTML = (dbID == 'TASKS' ? "Задание " : "Проект ") + taskID + ".<br>" + taskDataBase[dbID][taskID].title;
+			document.getElementById("task-text-pre").innerHTML = taskDataBase[dbID][taskID].text;
+			document.getElementById("task-code-pre").innerHTML = "<b>" + taskDataBase[dbID][taskID].code + "</b>";
+			document.getElementById("task-task-pre").innerHTML = taskDataBase[dbID][taskID].task;
+			document.getElementById("task-input-pre").innerHTML = taskDataBase[dbID][taskID].input;
+			document.getElementById("task-output-pre").innerHTML = taskDataBase[dbID][taskID].output;
+			document.getElementById("task-hint1-pre").innerHTML = taskDataBase[dbID][taskID].hint1;
+			document.getElementById("task-hint2-pre").innerHTML = taskDataBase[dbID][taskID].hint2;
+			document.getElementById("task-ans-pre").innerHTML = "<b>" + taskDataBase[dbID][taskID].ans + "</b>";
+
+		}
+
+		function hintLoad(el) {
+			document.getElementById(el.id + '-pre').hidden = document.getElementById(el.id + '-pre').hidden ? false : true;
+		}
+	</script>
+	<script src="data.js"></script>
+</html>
