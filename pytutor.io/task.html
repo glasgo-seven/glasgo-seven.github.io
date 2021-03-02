@@ -71,23 +71,40 @@
 			document.getElementById("header").innerHTML = (dbID == 'TASKS' ? "Задание " : "Проект ") + taskID + ".<br>" + taskDataBase[dbID][taskID].title;
 
 			document.getElementById("task-text-pre").innerHTML = taskDataBase[dbID][taskID].text;
-			document.getElementById("task-code-pre").innerHTML = "<b>" + taskDataBase[dbID][taskID].code + "</b>";
+			if (taskDataBase[dbID][taskID].code == null) {
+				document.getElementById("task-code").hidden = true;
+			} else {
+				document.getElementById("task-code-pre").innerHTML = "<b>" + taskDataBase[dbID][taskID].code + "</b>";
+			}
 			document.getElementById("task-task-pre").innerHTML = taskDataBase[dbID][taskID].task;
-			document.getElementById("task-input-pre").innerHTML = taskDataBase[dbID][taskID].input;
+			if (taskDataBase[dbID][taskID].input == null) {
+				document.getElementById("task-input-pre").innerHTML = "-";
+			} else {
+				document.getElementById("task-input-pre").innerHTML = taskDataBase[dbID][taskID].input;
+			}
 			document.getElementById("task-output-pre").innerHTML = taskDataBase[dbID][taskID].output;
 			document.getElementById("task-hint1-pre").innerHTML = taskDataBase[dbID][taskID].hint1;
 			document.getElementById("task-hint2-pre").innerHTML = taskDataBase[dbID][taskID].hint2;
 			document.getElementById("task-ans-pre").innerHTML = "<b>" + taskDataBase[dbID][taskID].ans + "</b>";
 
 			let boxContent = "";
-			for (i = 0; i < taskDataBase[dbID][taskID].labels.length; i++) {
-				boxContent += getLabel(taskDataBase[dbID][taskID].labels[i]);
+			const len = taskDataBase[dbID][taskID].labels.length;
+			for (i = 0; i < len; i++) {
+				boxContent += getLabel(taskDataBase[dbID][taskID].labels[i].nameTag, i);
 			}
 			document.getElementById("task-labels").innerHTML = boxContent;
+			for (i = 0; i < len; i++) {
+				const link = taskDataBase[dbID][taskID].labels[i].link;
+				document.getElementById("label" + i).addEventListener("click", function () { linkLabel(link); });
+			}
 		}
 
-		function getLabel(nameTag) {
-			return '<div class="label"><p class="label-name">' + nameTag + '</p></div>';
+		function getLabel(nameTag, id) {
+			return '<div class="label" id="label' + id + '"><p class="label-name">' + nameTag + '</p></div>';
+		}
+
+		function linkLabel(link) {
+			window.location = link;
 		}
 
 		function hintLoad(el) {

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" style="font-family: 'Courier New', Courier, monospace">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="./style.css" type="text/css" rel="stylesheet" />
+		<link rel="icon" href="./favicon.ico">
+
+		<title id="title"></title>
+	</head>
+
+	<body onload="onLoad()">
+		<form action="./index.html" style="display: flex;">
+			<input type="submit" value="🡸" style="padding: auto; width: 32px; height: 32px;">
+			<h1 id="header" style="margin: 0 2%;"></h1>
+		</form>
+		<hr>
+
+		<table id="task-table"></table>
+
+		<hr>
+	</body>
+
+	<footer>
+		<h5 style="color:rgb(64, 64, 64); text-align: center;">by glasgo-seven<br>2021</h5>
+	</footer>
+
+	<script>
+		function onLoad() {
+			const dbID = 'TASKS';
+			const label = window.location.href.split('?')[1];
+			const label_id = label.split('=')[0];
+			const label_nameTag = label.split('=')[1];
+
+			window.document.title = "Задания - " + label_nameTag;
+			document.getElementById("header").innerHTML = "Задания - " + label_nameTag;
+
+			let table = '<tr class="table-header"><td>ID</td><td>Title</td><td>Labels</td></tr>';
+			const len = taskDataBase_size;
+			for (i = 1; i <= len; i++) {
+				if (LABELS[label_id] in taskDataBase[dbID][i].labels) {
+					table += "<tr>";
+					table += "<td>" + i + "</td>";
+					table += "<td>" + taskDataBase[dbID][i].title + "</td>";
+					table += "<td>" + taskDataBase[dbID][i].lables + "</td>";
+					table += "</tr>";
+				}
+			}
+			document.getElementById("task-table").innerHTML = table;
+		}
+
+		function getLabel(nameTag) {
+			return '<div class="label"><p class="label-name">' + nameTag + '</p></div>';
+		}
+	</script>
+	<script src="data.js"></script>
+</html>
