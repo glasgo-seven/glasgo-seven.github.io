@@ -1,6 +1,8 @@
 body {
 	margin: 2%;
 
+	max-width: 805px;
+
 	font-size: 16px;
 }
 
@@ -29,7 +31,7 @@ footer {
 }
 
 html {
-	max-width: 805px;
+	
 }
 
 pre {
@@ -53,13 +55,14 @@ pre.hint {
 	height: 16px;
 
 	background-color: rgb(0,0,0);
+	color: white;
 
 	margin: 0.5% 0.75%;
 	padding: 0.5% 1%;
 
 	border-style: solid;
 	border-radius: 16px;
-	border-width: 1px;
+	border-width: 2px;
 	
 	display: inline-block;
 }
@@ -67,5 +70,32 @@ pre.hint {
 .label-name {
 	margin: 0;
 
-	color: white;
+	color: inherit;
+}
+
+.label:hover {
+	background-color: white;
+	color: black;
+
+	cursor: pointer;
+}
+
+#filter-table {
+	border-collapse: collapse;
+	border: hidden;
+}
+
+#table-header {
+}
+
+#id-filter {
+	min-width: 32px;
+}
+
+#title-filter {
+	min-width: 384px;
+}
+
+.row-filter {
+	border: 1px solid rgb(64, 64, 64);
 }
