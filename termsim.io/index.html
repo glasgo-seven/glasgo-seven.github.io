@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="style.css" type="text/css" rel="stylesheet" />
+		<title>TermSim</title>
+	</head>
+
+	<body onload="loadBody()">
+		<div id="terminal">
+			<div id="status-box">
+				<img id="icon" src="./src/termsim.png">
+				<label id="title-terminal"></label>
+			</div>
+			<div id="main-box">
+				<pre id="scroll-text"></pre>
+			</div>
+			<div id="input-box">
+				<label id="adress">>localhost‎‎‎‎‏‏‎‎></label>
+				<input type="text" id="input-text" placeholder="Enter your command here" maxlength="128">
+			</div>
+		</div>
+
+		<div id="divider">
+			<marquee behavior="scroll" direction="left"></marquee>
+		</div>
+
+		<div id="webview">
+			<div id="status-box">
+				<img id="icon" src="./src/ultraviewer.png">
+				<label id="title-webview">UltraViewer</label>
+				<button id="button-collapse" hidden>^</button>
+			</div>
+			<div id="iframe">
+				<iframe src="" frameborder="0" width="100%" height="100%"></iframe>
+			</div>
+		</div>
+	</body>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+	<script>
+		function loadBody() {
+			document.getElementById("title-terminal").innerHTML = "TermSim " + VERSION;
+			document.getElementById("scroll-text").innerHTML = "Terminal Simulator [Version " + VERSION + "]\nby glasgo-seven, 2021.\n\n>";
+		}
+		</script>
+		
+
+	<script type="text/javascript" src="script.js"></script>
+	<script type="text/javascript" src="commands.js"></script>
+</html>
