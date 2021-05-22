@@ -7,10 +7,69 @@
 		<title>Project List</title>
 	</head>
 
-	<body>
+	<body onload="loadColorBox()">
 		<ul>
 			<li><a href="./pytutor.io/index.html">pytutor.io</a></li>
 			<li><a href="./termsim.io/index.html">termsim.io</a></li>
+			<li><a href="./recipes.io/coursework-recipe/home.html">recipes.io</a></li>
 		</ul>
+
+		<div id="container">
+			<div id="color-box">
+				<table id="color-table"></table>
+			</div>
+		</div>
 	</body>
+
+	<script>
+		function loadColorBox() {
+			let table = "";
+			const size = 256;
+			const step = 1;
+			for (y = 0; y < size; y += step) {
+				table += "<tr>";
+				for (x = 0; x < size; x += step) {
+					table += '<td class="color-pixel" id="' + y + '_' + x + '" onmouseover="setBoxColor(this)"></td>';
+				}
+				table += "</tr>";
+			}
+			document.getElementById("color-table").innerHTML = table;
+		}
+	</script>
+	<script>
+		function decToHex(dec) {
+			return dec.toString(16);
+		}
+
+		function setBoxColor(el) {
+			const colors = el.id.split('_');
+			document.getElementById("color-box").style.background = "#" + decToHex(128) + decToHex(parseInt(colors[0])) + decToHex(parseInt(colors[1]));
+		}
+	</script>
+
+	<!-- The core Firebase JS SDK is always required and must be listed first -->
+	<script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
+	<script>
+		// Your web app's Firebase configuration
+		var firebaseConfig = {
+			apiKey: "AIzaSyAeD7-_Z9xiFl_b2heY6eCCG249yM2t_04",
+			authDomain: "pytutor-5a171.firebaseapp.com",
+			projectId: "pytutor-5a171",
+			storageBucket: "pytutor-5a171.appspot.com",
+			messagingSenderId: "251731517003",
+			appId: "1:251731517003:web:1378683e9f1120a84777ce"
+		};
+		// Initialize Firebase
+		firebase.initializeApp(firebaseConfig);
+	</script>
+
+	<style>
+		table {border-spacing: 0}
+		tr, td {margin: 0; padding: 0}
+
+		.color-pixel {width: 2px; height: 2px}
+
+		#container {padding: 16px; width: fit-content; height: fit-content; border: 2px solid black}
+		#color-box {width: fit-content; height: fit-content}
+	</style>
 </html>
