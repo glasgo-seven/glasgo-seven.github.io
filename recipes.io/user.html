@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="./style.css" type="text/css" rel="stylesheet" />
+		<link rel="icon" type="image/png" href="./rsc/favicon.ico" />
+		<script src="./firebase.js"></script>
+		<script src="./util.js"></script>
+		<script src="./user.js"></script>
+		<title id="title">Личный Кабинет</title>
+	</head>
+
+
+	<header>
+		<div id="header">
+			<img src="./rsc/logo.png" height="128" width="128">
+			<div id="navbar">
+				<div class="navbar-button" id="home" onclick="linkTo(this.id)">Главная</div>
+				<div class="navbar-button" id="form" onclick="linkTo(this.id)">Рецепты</div>
+				<div class="navbar-button" id="login" onclick="linkTo(this.id)">Личный Кабинет</div>
+			</div>
+		</div>
+	</header>
+
+	<body id="body" onload="loadUser()">
+		<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script>
+		<div id="user-container">
+			<div id="user-data">
+				<div id="user-email">
+					<h4>eMail</h4><hr>
+					<p id="user-email-email"></p>
+				</div>
+				<div id="user-password">
+					<h4>Сменить пароль:</h4><hr>
+					<p>Старый пароль:</p>
+					<input id="user-password-old" type="password">
+					<p>Новый пароль:</p>
+					<input id="user-password-new0" type="password">
+					<p>Повторить пароль:</p>
+					<input id="user-password-new1" type="password" oninput="comparePasswords('user-password-new0', 'user-password-new1', 'user-password-errormsg')"><br>
+					<hr>
+					<input id="user-password-submit" type="button" value="Enter" onclick="changePassword()">
+					<label id="user-password-errormsg"></label>
+				</div>
+				<div id="user-logout" onclick="logout()">ВЫЙТИ</div>
+			</div>
+			<div id="user-fav">
+				<div id="user-fav-header">Избранные рецепты:</div>
+				<div id="user-fav-recipes"></div>
+			</div>
+		</div>
+	</body>
+
+	<footer>
+		<div id="footer"></div>
+	</footer>
+</html>

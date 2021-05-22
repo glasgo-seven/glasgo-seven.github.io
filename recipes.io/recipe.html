@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="./style.css" type="text/css" rel="stylesheet" />
+		<link rel="icon" type="image/png" href="./rsc/favicon.ico" />
+		<script src="./firebase.js"></script>
+		<script src="./util.js"></script>
+		<script src="./recipe.js"></script>
+		<title id="title">Рецепты - </title>
+	</head>
+
+
+	<header>
+		<div id="header">
+			<img src="./rsc/logo.png" height="128" width="128">
+			<div id="navbar">
+				<div class="navbar-button" id="home" onclick="linkTo(this.id)">Главная</div>
+				<div class="navbar-button" id="form" onclick="linkTo(this.id)">Рецепты</div>
+				<div class="navbar-button" id="login" onclick="linkTo(this.id)">Личный Кабинет</div>
+			</div>
+		</div>
+	</header>
+
+	<body id="body" onload="loadOneRecipe()">
+		<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-auth.js"></script>
+		<script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script>
+		<div id="recipes-container">
+			<div id="recipe-card-full">
+				<div id="recipe-card-full-left">
+					<div class="row" style="height:16rem">
+						<img id="recipe-card-img" src="" height="256" width="256">
+						<div id="recipe-card-fav-0" onclick="addToFav()">Добавить в избранное</div>
+						<p id="recipe-card-time">Время: </p>
+						<p id="recipe-card-servings">Порций: </p>
+						<p id="recipe-card-rating">Рейтинг: </p>
+						<ul id="recipe-card-nutrition">
+							<h4>В 1 порции:</h4>
+						</ul>
+					</div>
+				</div>
+				<div>
+					<div class="row">
+						<p id="recipe-card-title"></p>
+					</div>
+					<ul id="recipe-card-ingredients">
+						<h4>Ингредиенты:</h4>
+					</ul>
+					<br>
+					<ol id="recipe-card-directions">
+						<h4>Рецепт:</h4>
+					</ol>
+					<br>
+				</div>
+			</div>
+		</div>
+	</body>
+
+	<footer>
+		<div id="footer"></div>
+	</footer>
+</html>
