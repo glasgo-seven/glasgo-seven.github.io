@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Genshin Daily</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	</head>
+
+	<body>
+		<main>
+			<h1>Genshin Daily</h1>
+			<fieldset>
+				<legend>Полезные ссылки</legend>
+				<ul>
+					<li><a href="https://webstatic-sea.mihoyo.com/app/ys-map-sea" target="_blank">Интерактивная карта</a></li>
+					<li><a href="https://genshin-impact.fandom.com/wiki/Promotional_Codes" target="_blank">Промокоды</a></li>
+					<li><a href="https://www.hoyolab.com/events" target="_blank">Список событий</a></li>
+					<br>
+					<li><a href="https://paimon.moe/wish/" target="_blank">Трекер молитв</a></li>
+					<li><a href="https://genshin.honeyhunterworld.com/" target="_blank">База знаний</a></li>
+				</ul>
+			</fieldset>
+			<br>
+			<fieldset>
+				<legend>Активные события</legend>
+				<ul>
+					<li><a href="https://webstatic-sea.mihoyo.com/ys/event/signin-sea/index.html?act_id=e202102251931481" target="_blank">Чек-Ин (обновляется по UTC+8 [19:00 МСК])</a></li>
+					<li><a href="https://webstatic-sea.mihoyo.com/ys/event/e20210928review" target="_blank">Ивент "Путешествие воспоминаний"</a></li>
+				</ul>
+			</fieldset>
+			<br>
+			<img src="./data/imgs/elemental-relations.jpg" alt="elemental-relations">
+			<img src="./data/imgs/primogems.jpg" alt="primogems">
+			<img src="./data/imgs/character-special-dishes.png" alt="character-special-dishes">
+			<img src="./data/imgs/character-ascension-materials.png" alt="character-ascension-materials">
+		</main>
+	</body>
+
+	<script>
+		$(document).ready(function() {
+			var d = new Date();
+			var h = d.getHours();
+			if (h >= 6 && h < 12)
+				document.body.className = "morning";
+			else if (h >= 12 && h < 17)
+				document.body.className = "noon";
+			else if (h >= 17 && h < 22)
+				document.body.className = "evening";
+			else
+				document.body.className = "midnight";
+		});
+	</script>
+
+	<style>
+		.morning {background: url("./bg-morning.jpg");}
+		.noon {background: url("./bg-noon.jpg");}
+		.evening {background-image: url("./bg-evening.jpg");}
+		.midnight {background: url("./bg-midnight.jpg");}
+
+		html {
+			font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+			font-size: 18px;
+		}
+		body {
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			background-size: cover;
+			background-color: rgba(0, 0, 0, 0.5);
+			background-blend-mode: multiply;
+		}
+		main {
+			background-color: rgba(255, 255, 255, 0.75);
+			background-blend-mode: multiply;
+			margin: 2rem 16rem;
+			padding: 2rem;
+		}
+		h1 {
+			margin-top: 0;
+		}
+		a:link, a:visited{
+			text-decoration: none;
+			color: rgb(0, 0, 0);
+		}
+		a:hover {
+			text-decoration: underline;
+		}
+		img {
+			display: block;
+			margin: 1rem auto;
+			max-width: 80%;
+			object-fit: contain;
+		}
+	</style>
+</html>
