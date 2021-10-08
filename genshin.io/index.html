@@ -19,7 +19,7 @@
 				<legend>Полезные ссылки</legend>
 				<ul>
 					<li><a href="https://webstatic-sea.mihoyo.com/app/ys-map-sea" target="_blank">Интерактивная карта</a></li>
-					<li><a href="https://genshin-impact.fandom.com/wiki/Promotional_Codes" target="_blank">Промокоды</a></li>
+					<li><a href="https://genshin-impact.fandom.com/wiki/Promotional_Codes" target="_blank">Промокоды</a> (<a href="https://genshin.mihoyo.com/ru/gift" target="_blank">активировать</a>)</li>
 					<li><a href="https://www.hoyolab.com/events" target="_blank">Список событий</a></li>
 					<br>
 					<li><a href="https://paimon.moe/wish/" target="_blank">Трекер молитв</a></li>
@@ -29,11 +29,23 @@
 			<br>
 			<fieldset>
 				<legend>Daily to-do list</legend>
-				<p>Фарм примогемов:</p>
-				<ul>
-					<li>Ежедневные поручения - 60 (10*4 + 20)</li>
+				<ul class="todo">
+					<p>Фарм примогемов:</p>
+					<li>(Благословение полой луны)</li>
+					<li>Ежедневные поручения</li>
+					<li>Игровые события</li>
+					<li>Бездна</li>
+					<br>
+					<p>Исследование мира:</p>
+					<li>Подземелья</li>
+					<li>Усыпальницы</li>
+					<li>Статуи Архонтов и Дерево вечной мерзлоты</li>
+					<br>
+					<p>Задания:</p>
+					<li>Задания легенд и Архонтов</li>
+					<li>Задания мира</li>
+					<li>Встречи</li>
 				</ul>
-				<p>Итого: 60</p>
 			</fieldset>
 			<br>
 			<fieldset>
@@ -106,7 +118,7 @@
 		}
 		a:link, a:visited{
 			text-decoration: none;
-			color: rgb(0, 0, 0);
+			color: rgb(96, 64, 128);
 		}
 		a:hover {
 			text-decoration: underline;
@@ -116,6 +128,12 @@
 			margin: 1rem auto;
 			max-width: 80%;
 			object-fit: contain;
+		}
+		.todo p {
+			margin: 0;
+		}
+		.todo li {
+			margin-left: 2rem;
 		}
 	</style>
 </html>
