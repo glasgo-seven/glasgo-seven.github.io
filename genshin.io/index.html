@@ -61,18 +61,24 @@
 				</ul>
 			</fieldset>
 			<br>
-			<a class="img" href="./images/elemental-relations.jpg" target="_blank">
-				<img src="./images/elemental-relations.jpg" alt="elemental-relations">
-			</a>
-			<a class="img" href="./images/primogems.jpg" target="_blank">
-				<img src="./images/primogems.jpg" alt="primogems">
-			</a>
-			<a class="img" href="./images/character-special-dishes.png" target="_blank">
-				<img src="./images/character-special-dishes.png" alt="character-special-dishes">
-			</a>
-			<a class="img" href="./images/character-ascension-materials.png" target="_blank">
-				<img src="./images/character-ascension-materials.png" alt="character-ascension-materials">
-			</a>
+			<div id="galery">
+				<a class="img" href="./images/elemental-relations.jpg" target="_blank">
+					<img src="./images/elemental-relations.jpg" alt="elemental-relations">
+					<p>Элементальные реакции</p>
+				</a>
+				<a class="img" href="./images/primogems.jpg" target="_blank">
+					<img src="./images/primogems.jpg" alt="primogems">
+					<p>Система примогемов</p>
+				</a>
+				<a class="img" href="./images/character-special-dishes.png" target="_blank">
+					<img src="./images/character-special-dishes.png" alt="character-special-dishes">
+					<p>Особые блюда персонажей</p>
+				</a>
+				<a class="img" href="./images/character-ascension-materials.png" target="_blank">
+					<img src="./images/character-ascension-materials.png" alt="character-ascension-materials">
+					<p>Материалы возвышения персонажей</p>
+				</a>
+			</div>
 		</main>
 	</body>
 
@@ -92,10 +98,10 @@
 	</script>
 
 	<style>
-		.morning {background: url("./images/backgrounds/bg-morning.jpg");}
-		.noon {background: url("./images/backgrounds/bg-noon.jpg");}
+		.morning {background-image: url("./images/backgrounds/bg-morning.jpg");}
+		.noon {background-image: url("./images/backgrounds/bg-noon.jpg");}
 		.evening {background-image: url("./images/backgrounds/bg-evening.jpg");}
-		.midnight {background: url("./images/backgrounds/bg-midnight.jpg");}
+		.midnight {background-image: url("./images/backgrounds/bg-midnight.jpg");}
 
 		html {
 			font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -124,11 +130,24 @@
 		a:hover {
 			text-decoration: underline;
 		}
-		img {
+		#galery {
 			display: block;
-			margin: 1rem auto;
-			max-width: 80%;
+			margin: 1rem;
 			object-fit: contain;
+		}
+		#galery p {
+			display: inline-block;
+			margin: auto;
+			color: black;
+		}
+		.img {
+			display: inline-block;
+			max-width: 40%;
+			margin: 1rem;
+			object-fit: contain;
+		}
+		img {
+			max-width: 75%;
 		}
 		.todo p {
 			margin: 0;
