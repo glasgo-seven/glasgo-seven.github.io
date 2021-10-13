@@ -7,7 +7,7 @@ function Label(id, nameTag) {
 const LABELS = {
 	'BASE':	new Label('BASE', 'Basics'),
 	'PROC':	new Label('PROC', 'Procedural_Programming'),
-	'OOP':	new Label('OOP', 'Object-Oriented_Programming'),
+	'OOP':	new Label('OOP', 'Object_Oriented_Programming'),
 	'EXT':	new Label('EXT', 'Extra'),
 
 	'IO':	new Label('IO', 'Input/Output'),
