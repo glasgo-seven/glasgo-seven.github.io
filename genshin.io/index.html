@@ -14,14 +14,16 @@
 	<body>
 		<main>
 			<h1 style="display: inline-block;">Genshin Daily</h1>
-			<p style="display: inline-block; margin: 1rem;">обновлено 08.10.2021</p>
-			<p style="display: inline-block;">by glasgo-seven (UID: 731599908)</p>
+			<p style="display: inline-block; margin-left: 1rem;">обновлено 14.10.2021</p>
+			<p style="display: inline-block; margin-left: 1rem;">by glasgo-seven (UID: 731599908)</p>
+			<p id="utc8time" style="margin: 0;"></p>
+			<p id="utc3time" style="margin-bottom: 1rem;"></p>
 			<fieldset>
 				<legend>Полезные ссылки</legend>
 				<ul>
 					<li><a href="https://webstatic-sea.mihoyo.com/app/ys-map-sea" target="_blank">Интерактивная карта</a></li>
 					<li><a href="https://genshin-impact.fandom.com/wiki/Promotional_Codes" target="_blank">Промокоды</a> (<a href="https://genshin.mihoyo.com/ru/gift" target="_blank">активировать</a>)</li>
-					<li><a href="https://www.hoyolab.com/events" target="_blank">Список событий</a></li>
+					<li><a href="https://www.hoyolab.com/events" target="_blank">Игровое сообщество miHoYo</a></li>
 					<br>
 					<li><a href="https://paimon.moe/wish/" target="_blank">Трекер молитв</a></li>
 					<li><a href="https://genshin.honeyhunterworld.com/" target="_blank">База знаний</a></li>
@@ -36,6 +38,7 @@
 					<li>Ежедневные поручения</li>
 					<li>Задания репутаций</li>
 					<li>Игровые события</li>
+					<li>Тестовые забеги</li>
 					<li>Бездна</li>
 					<br>
 					<p>Исследование мира:</p>
@@ -55,10 +58,11 @@
 				<ul>
 					<li><a href="https://webstatic-sea.mihoyo.com/ys/event/signin-sea/index.html?act_id=e202102251931481" target="_blank">Чек-Ин (обновляется по UTC+8 [19:00 МСК])</a></li>
 					<br>
-					<li><a href="https://webstatic-sea.mihoyo.com/ys/event/e20210928review" target="_blank">Ивент "Путешествие воспоминаний" [28.09.2021 - 12.10.2021 23:59 (UTC+8)]</a></li>
+					<li><a href="https://mhy.link/2a68KHA6" target="_blank">Браузерное событие «Дневник исследований Элой»<br>[13.10.2021 - 27.10.2021 23:59 (UTC+8)]</a></li>
 					<br>
-					<li><a href="https://mhy.link/857kIJA6" target="_blank">Ивент "Идём вместе" [ОКОНЧЕНО]</a></li>
-					<li><a href="https://webstatic-sea.mihoyo.com/ys/event/e20210930card/index.html?mhy_presentation_style=fullscreen&mhy_auth_required=true&game_biz=hk4e_global" target="_blank">Ивент "Послание времён" [ОКОНЧЕНО]</a></li>
+					<li><a href="https://webstatic-sea.mihoyo.com/ys/event/e20210928review" target="_blank">Браузерное событие "Путешествие воспоминаний" [ОКОНЧЕНО]</a></li>
+					<li><a href="https://mhy.link/857kIJA6" target="_blank">Браузерное событие "Идём вместе" [ОКОНЧЕНО]</a></li>
+					<li><a href="https://webstatic-sea.mihoyo.com/ys/event/e20210930card/index.html?mhy_presentation_style=fullscreen&mhy_auth_required=true&game_biz=hk4e_global" target="_blank">Браузерное событие "Послание времён" [ОКОНЧЕНО]</a></li>
 				</ul>
 			</fieldset>
 			<br>
@@ -99,6 +103,18 @@
 				document.body.className = "evening";
 			else
 				document.body.className = "midnight";
+
+			var time8 = document.getElementById("utc8time");
+			var time3 = document.getElementById("utc3time");
+			function refreshTime() {
+				var dt = new Date();
+				var h = dt.getHours();
+				var m = dt.getMinutes();
+				var s = dt.getSeconds();
+				time8.innerHTML = `Пекин (UTC+8) - ${h+5}:${m}:${s}`;
+				time3.innerHTML = `Москва (UTC+3) - ${h}:${m}:${s}`;
+			}
+			setInterval(refreshTime, 1000);
 		});
 	</script>
 
