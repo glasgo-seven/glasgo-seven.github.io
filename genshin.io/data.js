@@ -1,5 +1,38 @@
+var updateDate = "29.11.2021";
+
+var bannerData_active = [
+	[
+		"Молитва «Таинственные секреты» - «Принц мела» Альбедо (Гео)!",
+		"[24.11.2021 06:00 - 14.12.2021 19:59 (UTC+3)]",
+		"https://www.hoyolab.com/article/1432611"
+	],
+	[
+		"Молитва «Рождённая морской волной» - «Танец морской пены» Эола (Крио)!",
+		"[24.11.2021 06:00 - 14.12.2021 19:59 (UTC+3)]",
+		"https://www.hoyolab.com/article/1432612"
+	],
+	[
+		"Молитва «Воплощение божества» - Клятва свободы (Одноручное) и Песнь разбитых сосен (Двуручное)!",
+		"[24.11.2021 06:00 - 14.12.2021 19:59 (UTC+3)]",
+		"https://www.hoyolab.com/article/1432613"
+	]
+];
+
+var bannerData_expired = [
+
+];
+
 var eventData_active = [
-	
+	[
+		"Игровое событие «Белая пыль и снежная тень»",
+		"[25.11.2021 13:00 - 13.12.2021 05:59 (UTC+3)]",
+		"https://upload-os-bbs.hoyolab.com/upload/2021/11/19/1015537/863121d5e467dc1ffe13fab47bdf03b5_4468233710133244469.jpg?x-oss-process=image/resize,s_740/quality,q_80/auto-orient,0/interlace,1/format,jpg"
+	],
+	[
+		"[ОЖИДАЕТСЯ] Игровое событие «Дело Бантан Санго: Пёс-воин»",
+		"[07.12.2021 12:00 - 20.12.2021 05:59 (UTC+3)]",
+		"https://upload-os-bbs.hoyolab.com/upload/2021/11/19/1015537/84a1109146344cc3ba053eea11d52630_6775037132294758737.jpg?x-oss-process=image/resize,s_740/quality,q_80/auto-orient,0/interlace,1/format,jpg"
+	]
 ];
 
 var eventData_expired = [

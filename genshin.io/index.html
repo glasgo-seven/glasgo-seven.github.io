@@ -15,7 +15,7 @@
 	<body>
 		<main>
 			<h1 style="display: inline-block;">Genshin Daily</h1>
-			<p style="display: inline-block; margin-left: 1rem;">обновлено 22.11.2021</p>
+			<p id="update-date" style="display: inline-block; margin-left: 1rem;"></p>
 			<p id="utc8time" style="margin: 0;"></p>
 			<p id="utc3time" style="margin-bottom: 1rem;"></p>
 			<fieldset>
@@ -54,6 +54,11 @@
 			</fieldset>
 			<br>
 			<fieldset>
+				<legend>Баннеры</legend>
+				<ul id="banner-list"></ul>
+			</fieldset>
+			<br>
+			<fieldset>
 				<legend>События</legend>
 				<ul id="event-list">
 					<li><a href="https://webstatic-sea.mihoyo.com/ys/event/signin-sea/index.html?act_id=e202102251931481" target="_blank">
@@ -75,8 +80,11 @@
 
 	<script>
 		$(document).ready(function() {
+			document.getElementById("update-date").innerHTML += `обновлено ${updateDate}`;
+
 			setBackgroundImage();
 			createTimer();
+			loadBannerList();
 			loadEventList();
 			loadGalery();
 		});
@@ -111,10 +119,22 @@
 			setInterval(refreshTime, 1000);
 		}
 
+		function loadBannerList() {
+			list = document.getElementById("banner-list");
+			for (var [title, timeframe, href] of bannerData_active) {
+				list.innerHTML += `<li><a href="${href}" target="_blank">${title}</a><br>${timeframe}</li>`;
+			}
+			list.innerHTML += "<br>";
+			for (var [title, href] of bannerData_expired) {
+				console.log(event);
+				list.innerHTML += `<li><a href="${href}" target="_blank">${title} [ЗАКРЫТ]</a></li>`;
+			}
+		}
+
 		function loadEventList() {
 			list = document.getElementById("event-list");
 			for (var [title, timeframe, href] of eventData_active) {
-				list.innerHTML += `<li><a href="${href}" target="_blank">${title}<br>${timeframe}</a></li>`;
+				list.innerHTML += `<li><a href="${href}" target="_blank">${title}</a><br>${timeframe}</li>`;
 			}
 			list.innerHTML += "<br>";
 			for (var [title, href] of eventData_expired) {
