@@ -62,7 +62,7 @@
 				<legend>События</legend>
 				<ul id="event-list">
 					<li><a href="https://webstatic-sea.mihoyo.com/ys/event/signin-sea/index.html?act_id=e202102251931481" target="_blank">
-						Чек-Ин (обновляется по UTC+8 [19:00 МСК])</a></li>
+						Ежедневные отметки</a><br>[обновляется в 19:00 (UTC+3)]</li>
 					<br>
 				</ul>
 			</fieldset>
@@ -122,7 +122,7 @@
 		function loadBannerList() {
 			list = document.getElementById("banner-list");
 			for (var [title, timeframe, href] of bannerData_active) {
-				list.innerHTML += `<li><a href="${href}" target="_blank">${title}</a><br>${timeframe}</li>`;
+				list.innerHTML += `<li><a href="${href}" target="_blank">${title}</a><br>[${timeframe}]</li>`;
 			}
 			list.innerHTML += "<br>";
 			for (var [title, href] of bannerData_expired) {
@@ -134,12 +134,17 @@
 		function loadEventList() {
 			list = document.getElementById("event-list");
 			for (var [title, timeframe, href] of eventData_active) {
-				list.innerHTML += `<li><a href="${href}" target="_blank">${title}</a><br>${timeframe}</li>`;
+				list.innerHTML += `<li><a href="${href}" target="_blank">${title}</a><br>[${timeframe}]</li>`;
+			}
+			list.innerHTML += "<br>";
+			for (var [title, timeframe, href] of eventData_awaiting) {
+				console.log(event);
+				list.innerHTML += `<li>[ОЖИДАЕТСЯ] <a href="${href}" target="_blank">${title}</a><br>[${timeframe}]</li>`;
 			}
 			list.innerHTML += "<br>";
 			for (var [title, href] of eventData_expired) {
 				console.log(event);
-				list.innerHTML += `<li><a href="${href}" target="_blank">${title} [ОКОНЧЕНО]</a></li>`;
+				list.innerHTML += `<li>[ОКОНЧЕНО] <a href="${href}" target="_blank">${title}</a></li>`;
 			}
 		}
 
