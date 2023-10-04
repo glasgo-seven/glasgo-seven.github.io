@@ -1,0 +1,106 @@
+* {
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-size: 16px;
+}
+
+html {
+	height: 100%;
+
+	background-image: url("./rsc/bg.png");
+	background-size: cover;
+	background-repeat: no-repeat; 
+}
+
+body {
+	height: 100%;
+
+	display: grid;
+	grid-template-rows: 1fr 8fr 1fr;
+
+	margin: 0;
+	padding: 0;
+}
+
+div {
+	height: 100%;
+}
+
+
+div#navbar {
+	/* background-color: black; */
+}
+
+
+div#content {
+	display: grid;
+	grid-template-rows: 4fr .5fr 5.5fr;
+}
+div#icon {
+	margin: 0 4rem;
+
+	background-image: url("./rsc/Ru_white.png");
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+div#website {
+	margin: auto;
+}
+a {
+	display: inline-block;
+
+	padding: .5rem 2rem;
+
+	font-size: 22px;
+	color: #fff;
+	text-align: center;
+
+	background-color: rgba(59, 100, 214, 0.397);
+	border-radius: 1rem;
+}
+a:link, a:visited, a:hover, a:active {
+	text-decoration: none;
+}
+div#links {
+	display: grid;
+	grid-template-rows: 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr;
+
+	margin: 0 2rem;
+}
+div.linkbox {
+	margin: auto;
+
+	width:	5rem;
+	height:	5rem;
+
+	border-radius: 1rem;
+
+	/* background-color: black; */
+	background-size: contain;
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+div.linkbox#LI {
+	background-image: url("./rsc/linkedin_logo.png");
+}
+div.linkbox#VK {
+	background-image: url("./rsc/vk_logo.png");
+}
+div.linkbox#TG {
+	background-image: url("./rsc/telegram_logo.png");
+}
+div.linkbox#FB {
+	background-image: url("./rsc/facebook_logo.png");
+}
+div.linkbox#DZ {
+	background-image: url("./rsc/dzen_logo.svg");
+}
+div.linkbox#YT {
+	background-image: url("./rsc/youtube_logo.png");
+}
+
+
+div#footer {
+	/* background-color: black; */
+}
