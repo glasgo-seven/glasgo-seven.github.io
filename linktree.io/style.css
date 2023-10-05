@@ -15,7 +15,7 @@ body {
 	height: 100%;
 
 	display: grid;
-	grid-template-rows: 1fr 8fr 1fr;
+	grid-template-rows: 1fr 7fr 2fr;
 
 	margin: 0;
 	padding: 0;
@@ -33,7 +33,7 @@ div#navbar {
 
 div#content {
 	display: grid;
-	grid-template-rows: 4fr .5fr 5.5fr;
+	grid-template-rows: 4fr 1fr 5fr;
 }
 div#icon {
 	margin: 0 4rem;
@@ -81,23 +81,26 @@ div.linkbox {
 	background-repeat: no-repeat;
 	background-position: center center;
 }
+div.linkbox:hover {
+	cursor: pointer;
+}
 div.linkbox#LI {
-	background-image: url("./rsc/linkedin_logo.png");
+	background-image: url("./rsc/flat/linkedin.png");
 }
 div.linkbox#VK {
-	background-image: url("./rsc/vk_logo.png");
+	background-image: url("./rsc/flat/vk.png");
 }
 div.linkbox#TG {
-	background-image: url("./rsc/telegram_logo.png");
+	background-image: url("./rsc/flat/telegram.png");
 }
 div.linkbox#FB {
-	background-image: url("./rsc/facebook_logo.png");
+	background-image: url("./rsc/flat/facebook.png");
 }
 div.linkbox#DZ {
-	background-image: url("./rsc/dzen_logo.svg");
+	background-image: url("./rsc/flat/dzen.png");
 }
 div.linkbox#YT {
-	background-image: url("./rsc/youtube_logo.png");
+	background-image: url("./rsc/flat/youtube.png");
 }
 
 
